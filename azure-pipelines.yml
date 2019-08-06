@@ -6,4 +6,5 @@ jobs:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '3.5'
+    - script: pip install tox
     - script: tox -e py35
