@@ -1,4 +1,5 @@
 
+jobs:
 - job: py35
   steps:
     - task: UsePythonVersion@0
