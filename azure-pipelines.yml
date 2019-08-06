@@ -50,3 +50,24 @@ jobs:
         versionSpec: '3.6'
     - script: pip install tox
     - script: tox -e tensorflow-2
+- job: setup
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+    - script: pip install tox
+    - script: tox -e setup
+- job: flake8
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+    - script: pip install tox
+    - script: tox -e flake8
+- job: coverage
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+    - script: pip install tox
+    - script: tox -e coverage
