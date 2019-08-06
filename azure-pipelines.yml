@@ -1,8 +1,8 @@
-pool:
-  vmImage: 'vs2017-win2016'
 
 jobs:
 - job: py35
+  pool:
+    vmImage: 'vs2017-win2016'
   steps:
     - task: UsePythonVersion@0
       inputs:
