@@ -1,0 +1,9 @@
+
+
+jobs:
+- job: build
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.5'
+    - script: tox -e py35
