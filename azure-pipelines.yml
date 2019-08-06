@@ -15,3 +15,38 @@ jobs:
         versionSpec: '3.6'
     - script: pip install tox
     - script: tox -e py36
+- job: py37
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.7'
+    - script: pip install tox
+    - script: tox -e py37
+- job: tensorflow-112
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+    - script: pip install tox
+    - script: tox -e tensorflow-112
+- job: tensorflow-113
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+    - script: pip install tox
+    - script: tox -e tensorflow-113
+- job: tensorflow-114
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+    - script: pip install tox
+    - script: tox -e tensorflow-114
+- job: tensorflow-2
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.6'
+    - script: pip install tox
+    - script: tox -e tensorflow-2
