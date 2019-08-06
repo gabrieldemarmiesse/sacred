@@ -1,8 +1,15 @@
 
 jobs:
-- job: py35
+- job: py35win
   pool:
     vmImage: 'vs2017-win2016'
+  steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.5'
+    - script: pip install tox
+    - script: tox -e py35
+- job: py35
   steps:
     - task: UsePythonVersion@0
       inputs:
