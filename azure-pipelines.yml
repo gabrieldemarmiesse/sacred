@@ -1,9 +1,9 @@
 
 jobs:
-- job: py35
+- job: test
   strategy:
     matrix:
-      Linux py35:
+      Linuxpy35:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.5'
         TOX_CMD: 'py35'
@@ -11,10 +11,62 @@ jobs:
         IMAGE_NAME: 'macos-10.13'
         PYTHON_VERSION: '3.5'
         TOX_CMD: 'py35'
-      Windows py35:
+      Windowspy35:
         IMAGE_NAME: 'vs2017-win2016'
         PYTHON_VERSION: '3.5'
         TOX_CMD: 'py35'
+      Linuxpy36:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.6'
+        TOX_CMD: 'py36'
+      OSX py36:
+        IMAGE_NAME: 'macos-10.13'
+        PYTHON_VERSION: '3.6'
+        TOX_CMD: 'py36'
+      Windowspy36:
+        IMAGE_NAME: 'vs2017-win2016'
+        PYTHON_VERSION: '3.6'
+        TOX_CMD: 'py36'
+      Linuxpy37:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'py37'
+      OSX py37:
+        IMAGE_NAME: 'macos-10.13'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'py37'
+      Windowspy37:
+        IMAGE_NAME: 'vs2017-win2016'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'py37'
+      Linuxtensorflow_112:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.6'
+        TOX_CMD: 'tensorflow_112'
+      Linuxtensorflow_113:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.6'
+        TOX_CMD: 'tensorflow_113'
+      Linuxtensorflow-114:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'tensorflow-114'
+      Linuxtensorflow_2:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'tensorflow_2'
+      Linuxsetup:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'setup'
+      Linuxflake8:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'flake8'
+      Linuxcoverage:
+        IMAGE_NAME: 'ubuntu-16.04'
+        PYTHON_VERSION: '3.7'
+        TOX_CMD: 'coverage'
   pool:
     vmImage: $(IMAGE_NAME)
   steps:
@@ -23,66 +75,3 @@ jobs:
         versionSpec: $(PYTHON_VERSION)
     - bash: pip install tox
     - bash: tox -e $TOX_CMD
-- job: py36
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e py36
-- job: py37
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.7'
-    - script: pip install tox
-    - script: tox -e py37
-- job: tensorflow_112
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e tensorflow-112
-- job: tensorflow_113
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e tensorflow-113
-- job: tensorflow_114
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e tensorflow-114
-- job: tensorflow_2
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e tensorflow-2
-- job: setup
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e setup
-- job: flake8
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e flake8
-- job: coverage
-  steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.6'
-    - script: pip install tox
-    - script: tox -e coverage
