@@ -3,7 +3,7 @@ jobs:
 - job: test
   strategy:
     matrix:
-      Linuxpy35:
+      Linux py35:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.5'
         TOX_CMD: 'py35'
@@ -11,11 +11,11 @@ jobs:
         IMAGE_NAME: 'macos-10.13'
         PYTHON_VERSION: '3.5'
         TOX_CMD: 'py35'
-      Windowspy35:
+      Windows py35:
         IMAGE_NAME: 'vs2017-win2016'
         PYTHON_VERSION: '3.5'
         TOX_CMD: 'py35'
-      Linuxpy36:
+      Linux py36:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.6'
         TOX_CMD: 'py36'
@@ -23,11 +23,11 @@ jobs:
         IMAGE_NAME: 'macos-10.13'
         PYTHON_VERSION: '3.6'
         TOX_CMD: 'py36'
-      Windowspy36:
+      Windows py36:
         IMAGE_NAME: 'vs2017-win2016'
         PYTHON_VERSION: '3.6'
         TOX_CMD: 'py36'
-      Linuxpy37:
+      Linux py37:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'py37'
@@ -35,35 +35,35 @@ jobs:
         IMAGE_NAME: 'macos-10.13'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'py37'
-      Windowspy37:
+      Windows py37:
         IMAGE_NAME: 'vs2017-win2016'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'py37'
-      Linuxtensorflow_112:
+      Linux tensorflow_112:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.6'
         TOX_CMD: 'tensorflow_112'
-      Linuxtensorflow_113:
+      Linux tensorflow_113:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.6'
         TOX_CMD: 'tensorflow_113'
-      Linuxtensorflow-114:
+      Linux tensorflow-114:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'tensorflow-114'
-      Linuxtensorflow_2:
+      Linux tensorflow_2:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'tensorflow_2'
-      Linuxsetup:
+      Linux setup:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'setup'
-      Linuxflake8:
+      Linux flake8:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'flake8'
-      Linuxcoverage:
+      Linux coverage:
         IMAGE_NAME: 'ubuntu-16.04'
         PYTHON_VERSION: '3.7'
         TOX_CMD: 'coverage'
