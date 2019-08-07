@@ -21,8 +21,8 @@ jobs:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: $(PYTHON_VERSION)
-    - script: pip install tox
-    - script: tox -e $TOX_CMD
+    - bash: pip install tox
+    - bash: tox -e $TOX_CMD
 - job: py36
   steps:
     - task: UsePythonVersion@0
