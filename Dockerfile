@@ -1,5 +1,3 @@
-# syntax = docker/dockerfile:experimental
-
 FROM python:3.5 as py35
 
 RUN mkdir sacred
